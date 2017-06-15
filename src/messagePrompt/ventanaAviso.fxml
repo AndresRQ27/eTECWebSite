@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="165.0" prefWidth="431.0" stylesheets="/messagePrompt/ventanaAviso.css"
+            xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="messagePrompt.VentanaAvisoController">
+    <Label fx:id="mensaje" alignment="CENTER" layoutY="-8.0" prefHeight="93.0" prefWidth="431.0" text="Mensaje"
+           textFill="WHITE">
+        <font>
+          <Font size="19.0"/>
+        </font>
+    </Label>
+    <Button fx:id="entendido" layoutX="156.0" layoutY="106.0" mnemonicParsing="false" prefHeight="45.0"
+            prefWidth="120.0" text="Entendido"/>
+</AnchorPane>
