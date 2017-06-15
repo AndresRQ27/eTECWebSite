@@ -2,6 +2,7 @@ package login;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import main.MainManager;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -11,7 +12,7 @@ import java.util.logging.Logger;
 /** Manages control flow for logins */
 public class LoginManager {
   public final Scene scene;
-  private String password;
+  private String password = "password";
 
   public LoginManager(Scene scene) {
     this.scene = scene;
@@ -23,7 +24,7 @@ public class LoginManager {
    */ 
   public void authenticated(String password) {
     if (Objects.equals(password, this.password)){
-
+        new MainManager(this.scene).showMainScreen();
     }
   }
 

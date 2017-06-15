@@ -34,6 +34,6 @@
                <Font size="18.0" />
            </font>
         </Label>
-        <PasswordField fx:id="password" disable="true" GridPane.columnIndex="1" />
+        <PasswordField fx:id="password" disable="true" onAction="#onEnter" GridPane.columnIndex="1" />
     </GridPane>
 </AnchorPane>
