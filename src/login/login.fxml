@@ -12,11 +12,11 @@
 
 <AnchorPane prefHeight="680.0" prefWidth="1240.0" stylesheets="/main/main.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
       <Button fx:id="loginButton" alignment="CENTER" defaultButton="true" layoutX="433.0" layoutY="536.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="374.0" text="Login" />
-   <CheckBox fx:id="admin" layoutX="531.0" layoutY="312.0" mnemonicParsing="false" text="Administrador">
+   <CheckBox fx:id="admin" layoutX="531.0" layoutY="312.0" mnemonicParsing="false" text="Administrador" textFill="WHITE">
       <font>
          <Font size="20.0" />
       </font></CheckBox>
-   <Label layoutX="413.0" layoutY="109.0" text="NoCaptcha Verification">
+   <Label layoutX="413.0" layoutY="109.0" text="NoCaptcha Verification" textFill="WHITE">
       <font>
          <Font size="36.0" />
       </font>
@@ -29,7 +29,7 @@
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
-        <Label contentDisplay="CENTER" text="Contraseña">
+        <Label contentDisplay="CENTER" text="Contraseña" textFill="WHITE">
            <font>
                <Font size="18.0" />
            </font>
