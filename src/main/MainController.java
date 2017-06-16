@@ -12,7 +12,7 @@ import org.json.simple.parser.ParseException;
  * DrApp
  * main
  */
-class MainController {
+public class MainController {
 
     private String id;
 

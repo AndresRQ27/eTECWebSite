@@ -7,7 +7,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
 /** Controls the login screen */
-class LoginController {
+public class LoginController {
     @FXML
     private TextField password;
     @FXML
