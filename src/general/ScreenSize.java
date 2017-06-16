@@ -10,18 +10,10 @@ public class ScreenSize {
         return width;
     }
 
-    public static void setWidth(int width) {
-        ScreenSize.width = width;
-    }
-
     private static int width = 1240;
 
     public static int getHeight() {
         return height;
-    }
-
-    public static void setHeight(int height) {
-        ScreenSize.height = height;
     }
 
     private static int height = 680;

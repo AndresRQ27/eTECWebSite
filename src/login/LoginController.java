@@ -7,7 +7,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
 /** Controls the login screen */
-public class LoginController {
+class LoginController {
     @FXML
     private TextField password;
     @FXML
@@ -37,7 +37,7 @@ public class LoginController {
     }
 
     @FXML
-    public void onEnter(ActionEvent ae){
+    public void onEnter(){
         loginButton.fire();
     }
 }

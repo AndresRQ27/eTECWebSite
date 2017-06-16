@@ -12,19 +12,27 @@ import org.json.simple.parser.ParseException;
  * DrApp
  * main
  */
-public class MainController {
+class MainController {
+
+    private String id;
 
     @FXML
+    private
     CheckBox transit;
     @FXML
+    private
     CheckBox received;
     @FXML
+    private
     CheckBox delivered;
     @FXML
+    private
     TextField packageId;
     @FXML
+    private
     Button save;
     @FXML
+    private
     Button search;
 
     public void initialize() {}
@@ -33,7 +41,9 @@ public class MainController {
 
         search.setOnAction(event -> {
             try {
+                id = packageId.getText();
                 mainManager.search(this, packageId.getText());
+                save.setDisable(false);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -44,7 +54,18 @@ public class MainController {
             transit.setSelected(false);
         });
 
-
+        save.setOnAction(event -> {
+            if (!delivered.isSelected()){
+                try {
+                    throw new IllegalStateException("For saving, you must change the state and it can't be null");
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            } else {
+                save.setDisable(true);
+                mainManager.save(id);
+            }
+        });
     }
 
     @FXML
@@ -52,11 +73,11 @@ public class MainController {
         search.fire();
     }
 
-    public void setStatus(boolean transitStatus, boolean recievedStatus, boolean deliveredStatus){
+    public void setStatus(boolean transitStatus, boolean receivedStatus, boolean deliveredStatus){
 
         delivered.setDisable(false);
         delivered.setSelected(deliveredStatus);
         transit.setSelected(transitStatus);
-        received.setSelected(recievedStatus);
+        received.setSelected(receivedStatus);
     }
 }

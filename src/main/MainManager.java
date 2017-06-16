@@ -1,8 +1,11 @@
 package main;
 
 import connection.NetClientGet;
+import connection.NetClientPut;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -21,10 +24,6 @@ public class MainManager {
         this.scene = scene;
     }
 
-    public void cancel() {
-        showMainScreen();
-    }
-
     public void showMainScreen() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("main.fxml"));
@@ -37,6 +36,24 @@ public class MainManager {
     }
 
     public void search(MainController mainController, String id) throws ParseException {
-        NetClientGet.NetClientGet("/productos/");
+
+        JSONArray jsonArray;
+
+        jsonArray = NetClientGet.NetClientGet("/productos/" + id);
+        JSONObject jsonObject = (JSONObject) jsonArray.get(0);
+        String status = (String) jsonObject.get("estado");
+
+        switch (status) {
+            case "En tránsito":
+                mainController.setStatus(true, false, false);
+            case "Recibido":
+                mainController.setStatus(false, true, false);
+            case "Entregado":
+                mainController.setStatus(false, false, true);
+        }
+    }
+
+    public void save(String id){
+        NetClientPut.NetClientPut("/productos/" + id, "{\"Estado\":\"Entregado\"}");
     }
 }

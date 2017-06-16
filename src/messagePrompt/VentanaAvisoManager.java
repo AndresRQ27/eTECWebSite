@@ -15,10 +15,6 @@ import java.io.IOException;
 public class VentanaAvisoManager {
     public Scene scene;
 
-    public VentanaAvisoManager(String text) {
-        showCrearCasosScreen(text);
-    }
-
     private void showCrearCasosScreen(String text) {
 
         this.scene = new Scene(new AnchorPane());

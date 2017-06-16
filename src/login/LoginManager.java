@@ -10,9 +10,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /** Manages control flow for logins */
-public class LoginManager {
-  public final Scene scene;
-  private String password = "password";
+class LoginManager {
+  private final Scene scene;
+  private final String password = "password";
 
   public LoginManager(Scene scene) {
     this.scene = scene;
