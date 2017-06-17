@@ -44,6 +44,7 @@ public class MainController {
                 id = packageId.getText();
                 mainManager.search(this, packageId.getText());
                 save.setDisable(false);
+                delivered.setDisable(false);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -63,6 +64,7 @@ public class MainController {
                 }
             } else {
                 save.setDisable(true);
+                delivered.setDisable(true);
                 mainManager.save(id);
             }
         });

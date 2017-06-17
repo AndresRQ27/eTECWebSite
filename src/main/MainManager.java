@@ -39,17 +39,20 @@ public class MainManager {
 
         JSONArray jsonArray;
 
-        jsonArray = NetClientGet.NetClientGet("/productos/" + id);
+        jsonArray = NetClientGet.NetClientGet("/paquetes/" + id);
         JSONObject jsonObject = (JSONObject) jsonArray.get(0);
         String status = (String) jsonObject.get("estado");
 
         switch (status) {
             case "En tránsito":
                 mainController.setStatus(true, false, false);
+                break;
             case "Recibido":
                 mainController.setStatus(false, true, false);
+                break;
             case "Entregado":
                 mainController.setStatus(false, false, true);
+                break;
         }
     }
 
